@@ -61,6 +61,11 @@
               v-else-if="item.continent === 'South America' && displayLabels"
               >South America</span
             >
+            <span
+              class="badge bg-info"
+              v-else-if="item.continent === 'Asia' && displayLabels"
+              >Asia</span
+            >
           </div>
           <p><strong>Rating: </strong>{{ ratingDec(item.rating) }}</p>
         </div>

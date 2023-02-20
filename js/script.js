@@ -60,6 +60,15 @@ const App = {
           continent: "South America",
           rating: "7",
         },
+        {
+          id: "6",
+          name: "Hong Kong",
+          description: "Victoria Peak, Hong Kong",
+          image: "/images/hong-kong.jpg",
+          photographer: "Florian Wehde (unsplash)",
+          continent: "Asia",
+          rating: "6",
+        },
       ],
     };
   },
