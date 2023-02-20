@@ -1,4 +1,15 @@
 const App = {
+  computed: {
+    filteredCities() {
+      return this.cities.filter((item) => item.rating >= this.max);
+    },
+  },
+  methods: {
+    ratingDec(rating) {
+      console.log("Rating: " + rating);
+      return `${Number.parseFloat(rating).toFixed(1)}`;
+    },
+  },
   data() {
     return {
       displayLabels: true,
