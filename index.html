@@ -13,14 +13,29 @@
     <link href="/css/styles.css" rel="stylesheet" />
   </head>
   <body>
-    <section class="container text-center" id="app">
+    <section class="container" id="app">
       <h1 class="display-1 mb-5">Great cities of the world</h1>
-      <div id="item-list" class="row d-flex mb-3 align-items-center">
-        <div class="col-lg-4" v-for="item in cities" :key="item.id">
-          <div
-            
-            class="d-block px-0 city-img-container"
-          >
+      <label for="max-price" class="form-label h2">Minimum rating</label>
+      <input v-model.number="max" class="form-control" id="min-rating" />
+      <input v-model="max" type="range" class="form-range" min="0" max="10" />
+      <div class="form-check">
+        <input
+          v-model="displayLabels"
+          class="form-check-input"
+          type="checkbox"
+          id="showLabels"
+        />
+        <label class="form-check-label" for="showLabels">
+          <span class="badge bg-dark" v-else>show labels</span>
+        </label>
+      </div>
+      <div
+        class="row d-flex mb-3 align-items-center item-row"
+        v-for="item in cities"
+        :key="item.id"
+      >
+        <template v-if="item.rating >= Number(max)">
+          <div class="col-lg-8 col-sm-12 d-block px-0 city-img-container">
             <img
               style="padding-top: 5px"
               class="img-fluid d-inline-block h-100"
@@ -28,29 +43,36 @@
               :alt="item.name"
             />
           </div>
-          <div class="d-block">
+          <div class="d-block col-4">
             <h3 class="text-primary mt-0">{{item.name}}</h3>
 
             <p>{{item.description}}</p>
             <p><strong>Photographer: </strong>{{item.photographer}}</p>
             <div class="h5 float-right">
-              <span class="badge bg-success" v-if="item.continent === 'Europe'"
+              <span
+                class="badge bg-success"
+                v-if="item.continent === 'Europe' && displayLabels"
                 >Europe</span
               >
               <span
                 class="badge bg-primary"
-                v-else-if="item.continent === 'North America'"
+                v-else-if="item.continent === 'North America' && displayLabels"
                 >North America</span
               >
               <span
                 class="badge bg-danger"
-                v-else-if="item.continent === 'Australia'"
+                v-else-if="item.continent === 'Australia' && displayLabels"
                 >Australia</span
               >
-              <span class="badge bg-warning" v-else>South America</span>
+              <span
+                class="badge bg-warning"
+                v-else-if="item.continent === 'South America' && displayLabels"
+                >South America</span
+              >
             </div>
+            <p><strong>Rating: </strong>{{item.rating}}</p>
           </div>
-        </div>
+        </template>
       </div>
     </section>
     <script

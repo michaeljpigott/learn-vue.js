@@ -1,38 +1,44 @@
 const App = {
   data() {
     return {
+      displayLabels: true,
+      max: 1,
       cities: [
         {
           id: "1",
           name: "London",
-          description: "London, UK",
+          description: "Big Ben, London, United Kingdom",
           image: "/images/london.jpg",
-          photographer: "Alex Azabache (unsplash)",
+          photographer: "Marcin Nowak  (unsplash)",
           continent: "Europe",
+          rating: "9",
         },
         {
           id: "2",
           name: "Paris",
           description: "Paris, France",
           image: "/images/paris.jpg",
-          photographer: "cyril mazarin (unsplash)",
+          photographer: "Anthony DELANOIX (unsplash)",
           continent: "Europe",
+          rating: "7",
         },
         {
           id: "3",
           name: "New York",
           description: "Manhattan, New York, United States",
           image: "/images/new-york.jpg",
-          photographer: "Fabien Bazanegue (unsplash)",
+          photographer: "Michael Discenza (unsplash)",
           continent: "North America",
+          rating: "9",
         },
         {
           id: "4",
           name: "Sydney",
-          description: "Sydney, NSW, Australia",
+          description: "Sydney, Australia",
           image: "/images/Sydney.jpg",
-          photographer: "Kewal (unsplash)",
+          photographer: "Dan Freeman (unsplash)",
           continent: "Australia",
+          rating: "9",
         },
         {
           id: "5",
@@ -41,6 +47,7 @@ const App = {
           image: "/images/rio.jpg",
           photographer: "Agustin Diaz Gargiulo (unsplash)",
           continent: "South America",
+          rating: "7",
         },
       ],
     };

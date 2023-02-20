@@ -1,5 +1,3 @@
-.city-img-container {
-  height: 500px;
-  border-style: dashed;
-  border-color: red;
+.item-row {
+  background-color: lightgrey;
 }
